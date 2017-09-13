@@ -2,7 +2,19 @@
     "name": "Opsweekly",
     "description": "Weekly report tracker, an on call categorisation and reporting tool, a sleep tracker, a meeting organiser and a coffee maker all in one.",
     "website": "https://github.com/etsy/opsweekly",
-    "repository": "https://github.com/etsy/opsweekly",
+    "repository": "https://github.com/frah/opsweekly",
     "success_url": "/",
-    "keywords": []
+    "keywords": [],
+    "addons": [
+        "cleardb:ignite"
+    ],
+    "scripts": {
+        "postdeploy": "php postdeploy.php"
+    },
+    "env": {
+        "PROD_FQDN": {
+            "description": "The prod FQDN is then subsituted in place of the above string",
+            "required": true
+        }
+    }
 }
